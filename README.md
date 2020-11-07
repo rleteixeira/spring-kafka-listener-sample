@@ -22,7 +22,7 @@ Considering inside Apache Kafka install folder and /bin path
 ```
 * Create Topic
 ```
-./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partition 1 --topic topic-example
+./kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic topic-example
 ```
 * List all topics
 ```

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<log4j:configuration xmlns:log4j=“http://jakarta.apache.org/log4j/ 5”>
+<appender name="R" class="org.apache.log4j.RollingFileAppender">
+	<param name="file" value="Log.log" />
+	<param name="MaxFileSize" value="1000KB" />
+	<!-- Keep one backup file -->
+	<param name="MaxBackupIndex" value="1" />
+	<layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" value="%p %t %c - %m%n" />
+	</layout>
+</appender>
+
+<appender name="D" class="org.apache.log4j.DailyRollingFileAppender">
+	<param name="File" value="Log.log" />
+	<param name="DatePattern" value="'.'yyyy-MM-dd" />
+	<layout class="org.apache.log4j.PatternLayout">
+		<!-- Pattern to output the caller's file name and line number -->
+		<param name="ConversionPattern" value="%5p [%t] (%F:%L) - %m%n" />
+	</layout>
+</appender>
+
+<appender name="D3" class="org.apache.log4j.DailyRollingFileAppender">
+	<param name="DatePattern" value="'.'yyyy-MM-dd-HH" />
+	<param name="File" value="log/Log.log" />
+	<layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern" value="%-15d{ISO8601} %-10p (%c) - %m%n" />
+	</layout>
+</appender>
+
+<root>
+	<priority value="all" />
+	<appender-ref ref="stdout" />
+	<appender-ref ref="D3" />
+</root>
+</log4j:configuration>

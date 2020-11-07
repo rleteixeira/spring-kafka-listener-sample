@@ -49,8 +49,19 @@
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
     </dependency>
+	<dependency>
+		<groupId>org.projectlombok</groupId>
+		<artifactId>lombok</artifactId>
+		<version>edge-SNAPSHOT</version>
+		<scope>provided</scope>
+	</dependency>
   </dependencies>
-
+	<repositories>
+		<repository>
+			<id>projectlombok.org</id>
+			<url>https://projectlombok.org/edge-releases</url>
+		</repository>
+	</repositories>
   <build>
     <plugins>
       <plugin>
